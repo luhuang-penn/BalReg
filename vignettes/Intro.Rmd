@@ -1,0 +1,26 @@
+---
+title: "Intro"
+author: "lu Huang"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+This packge provides two main functions: ```BalReg_mcmc``` and ```BalReg_probit_mcmc```
+
+Usage:
+```{r balreg,include =TRUE,eval=FALSE}
+BalReg_mcmc(beta0,v0,lambda,v,w1,w2,Y,X,TRUE,1e5,z_start)
+BalReg_probit_mcmc(beta0,v0,w1,w2,Y,X,TRUE,1e5,z_start)
+```
+
+Details on parameters can be found under ```man/```
