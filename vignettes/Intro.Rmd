@@ -1,10 +1,6 @@
 ---
 title: "Intro"
-<<<<<<< HEAD
 author: "Lu Huang"
-=======
-author: "lu Huang"
->>>>>>> 0ed2aa63f522acb22a23f588ec8a1e98d784d45e
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
@@ -21,13 +17,12 @@ knitr::opts_chunk$set(
 ```
 This packge provides two main functions: ```BalReg_mcmc``` and ```BalReg_probit_mcmc```
 
-<<<<<<< HEAD
+
 To install package
 ```{r install, include = TRUE, eval = FALSE}
 devtools::install_github("luhuang-penn/BalReg")
 ```
-=======
->>>>>>> 0ed2aa63f522acb22a23f588ec8a1e98d784d45e
+
 Usage:
 ```{r balreg,include =TRUE,eval=FALSE}
 BalReg_mcmc(beta0,v0,lambda,v,w1,w2,Y,X,TRUE,1e5,z_start)
