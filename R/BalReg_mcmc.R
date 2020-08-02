@@ -29,7 +29,7 @@ BalReg_mcmc<-function(beta0,V0,lambda,v,w1,w2,Y,X,verbose,iter,start){
   for (i in 2:iter){
     if (verbose) {cat(sprintf("Performing Iteration # %s \n", i))}
     if ( verbose && (i %%1e4 == 2)) {write.table(paste0("Performing Iteration # ", i, " at ", Sys.time()),filename,append=T)}
-    update <- mh_update(Z[i-1,,drop=F],1/3,1/3,1/4,1/4,1/2,verbose,a0,h,b0,c,lambda,v,w1,w2,Y,X)
+    update <- mh_update(Z[i-1,,drop=F],1/3,1/3,1/4,1/4,1/2,verbose,logtarget,a0,h,b0,c,lambda,v,w1,w2,Y,X)
     beta_trace[[i]] <- update$postbeta
       B_tmp <- balance(X,update$z)
       m <- .lm.fit(cbind(rep(1,n),B_tmp),Y)

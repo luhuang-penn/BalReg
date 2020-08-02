@@ -10,7 +10,7 @@
 #return is z for next iteration; logtarget value; MH ratio; posterior for beta|z
 #possible to add simulated annealing
 
-mh_update <- function(zt,phi0,phi1,pa,pd,pw,verbose,...){
+mh_update <- function(zt,phi0,phi1,pa,pd,pw,verbose,logtarget,...){
   znew <- zt
   phi2 <- 1 - phi0 - phi1
   mplus <- sum(zt == 1)

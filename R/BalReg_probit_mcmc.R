@@ -66,7 +66,7 @@ BalReg_probit_mcmc<-function(beta0,V0,w1,w2,Y,X,verbose,iter,start,filename = 'l
   for (i in 2:iter){
     if ( verbose && (i %%1e4 == 2)) {write.table(paste0("Performing Iteration # ", i, " at ", Sys.time()),filename,append=T)}
     
-    update <- mh_update(Z[i-1,,drop=F],1/3,1/3,1/4,1/4,1/2,verbose,a0,v0,b0,v1,w1,w2,ystar[i-1,],X)
+    update <- mh_update(Z[i-1,,drop=F],1/3,1/3,1/4,1/4,1/2,verbose,probit_logtarget,a0,v0,b0,v1,w1,w2,ystar[i-1,],X)
     if (enforce) {
     B_tmp <- balance(X,update$z)
     m <- .lm.fit(cbind(rep(1,n),B_tmp),ystar[i-1,])
